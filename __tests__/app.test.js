@@ -33,7 +33,7 @@ describe('app routes', () => {
       });
   });
 
-  it('can login a user', async() => {
+  it('can login a user', async () => {
     const user = await User.create({ username: 'jbj', email: 'jbj@jbj.com', password: 'mydumbpassword' });
     return request(app)
       .post('/api/v1/auth/login')
@@ -48,4 +48,32 @@ describe('app routes', () => {
       });
   });
 
+
+  it('fails when a bad email is entered', async () => {
+    await User.create({ username: 'jbj', email: 'jbj@jbj.com', password: 'mydumbpassword' });
+    return request(app)
+      .post('/api/v1/auth/login')
+      .send({ username: 'jbj', email: 'notjbj@notjbj.com', password: 'mydumbpassworkd' })
+      .then(res => {
+        expect(res.status).toEqual(401);
+        expect(res.body).toEqual({
+          message: 'Invalid Email/Password',
+          status: 401
+        });
+      });
+  });
+
+  it('fails when a bad password is entered', async () => {
+    await User.create({ username: 'jbj', email: 'jbj@jbj.com', password: 'mydumbpassword' });
+    return request(app)
+      .post('/api/v1/auth/login')
+      .send({ username: 'jbj', email: 'jbj@jbj.com', password: 'mystupidpassword' })
+      .then(res => {
+        expect(res.status).toEqual(401);
+        expect(res.body).toEqual({
+          message: 'Invalid Email/Password',
+          status: 401
+        });
+      });
+  });
 });
