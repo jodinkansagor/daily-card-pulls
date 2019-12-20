@@ -32,4 +32,20 @@ describe('app routes', () => {
         });
       });
   });
+
+  it('can login a user', async() => {
+    const user = await User.create({ username: 'jbj', email: 'jbj@jbj.com', password: 'mydumbpassword' });
+    return request(app)
+      .post('/api/v1/auth/login')
+      .send({ username: 'jbj', email: 'jbj@jbj.com', password: 'mydumbpassword' })
+      .then(res => {
+        expect(res.body).toEqual({
+          _id: user.id,
+          username: 'jbj',
+          email: 'jbj@jbj.com',
+          __v: 0
+        });
+      });
+  });
+
 });
