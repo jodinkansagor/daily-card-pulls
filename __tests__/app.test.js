@@ -4,7 +4,7 @@ const request = require('supertest');
 const app = require('../lib/app');
 const connect = require('../lib/utils/connect');
 const mongoose = require('mongoose');
-const User = require('../lib/models/User')
+const User = require('../lib/models/User');
 
 describe('app routes', () => {
   beforeAll(() => {
@@ -24,6 +24,7 @@ describe('app routes', () => {
       .post('/api/v1/auth/signup')
       .send({ username: 'jbj', email: 'jbj@jbj.com', password: 'password' })
       .then(res => {
+        expect(res.header['set-cookie'][0]).toEqual(expect.stringContaining('session='));
         expect(res.body).toEqual({
           _id: expect.any(String),
           username: 'jbj',
@@ -76,4 +77,5 @@ describe('app routes', () => {
         });
       });
   });
+
 });
