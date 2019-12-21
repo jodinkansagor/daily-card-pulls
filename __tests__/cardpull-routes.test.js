@@ -14,8 +14,20 @@ describe('crud routes', () => {
     connect();
   });
 
+
   beforeEach(() => {
     return mongoose.connection.dropDatabase();
+  });
+
+  let date;
+  let cardPull;
+  beforeEach(async () => {
+    date = new Date();
+    cardPull = await CardPull.create({
+      date,
+      card: 'The Empress',
+      explanation: 'She has the power'
+    });
   });
 
   afterAll(() => {
@@ -37,6 +49,20 @@ describe('crud routes', () => {
           date: date.toISOString(),
           card: 'The Empress',
           explanation: 'She got power',
+          __v: 0
+        });
+      });
+  });
+
+  it('can get one card', () => {
+    return request(app)
+      .get(`/api/v1/cardpulls/${cardPull._id}`)
+      .then(res => {
+        expect(res.body).toEqual({
+          _id: cardPull.id,
+          date: date.toISOString(),
+          card: 'The Empress',
+          explanation: 'She has the power',
           __v: 0
         });
       });
