@@ -82,4 +82,20 @@ describe('crud routes', () => {
       });
   });
 
+
+  it('can update a card by id', () => {
+    return request(app)
+      .patch(`/api/v1/cardpulls/${cardPull.id}`)
+      .send({ explanation: 'She still has the power.' })
+      .then(res => {
+        expect(res.body).toEqual({
+          _id: cardPull.id,
+          date: date.toISOString(),
+          card: 'The Empress',
+          explanation: 'She still has the power',
+          __v: 0
+        });
+      });
+  });
+
 });
