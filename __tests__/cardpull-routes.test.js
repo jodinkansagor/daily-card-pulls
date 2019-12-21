@@ -26,7 +26,7 @@ describe('crud routes', () => {
     cardPull = await CardPull.create({
       date,
       card: 'The Empress',
-      explanation: 'She has the power'
+      explanation: 'She has the power.'
     });
   });
 
@@ -41,14 +41,14 @@ describe('crud routes', () => {
       .send({
         date,
         card: 'The Empress',
-        explanation: 'She got power'
+        explanation: 'She got power.'
       })
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
           date: date.toISOString(),
           card: 'The Empress',
-          explanation: 'She got power',
+          explanation: 'She got power.',
           __v: 0
         });
       });
@@ -62,7 +62,7 @@ describe('crud routes', () => {
           _id: cardPull.id,
           date: date.toISOString(),
           card: 'The Empress',
-          explanation: 'She has the power',
+          explanation: 'She has the power.',
           __v: 0
         });
       });
@@ -76,7 +76,7 @@ describe('crud routes', () => {
           _id: cardPull.id,
           date: date.toISOString(),
           card: 'The Empress',
-          explanation: 'She has the power',
+          explanation: 'She has the power.',
           __v: 0
         }]);
       });
@@ -92,7 +92,21 @@ describe('crud routes', () => {
           _id: cardPull.id,
           date: date.toISOString(),
           card: 'The Empress',
-          explanation: 'She still has the power',
+          explanation: 'She still has the power.',
+          __v: 0
+        });
+      });
+  });
+
+  it('can delete a card by id', () => {
+    return request(app)
+      .delete(`/api/v1/cardpulls/${cardPull.id}`)
+      .then(res => {
+        expect(res.body).toEqual({
+          _id: cardPull.id,
+          date: date.toISOString(),
+          card: 'The Empress',
+          explanation: 'She has the power.',
           __v: 0
         });
       });
