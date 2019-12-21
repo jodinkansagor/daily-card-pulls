@@ -78,4 +78,29 @@ describe('app routes', () => {
       });
   });
 
+
+  it('can verify if a user is logged in', async () => {
+    const user1 = await User.create({
+      username: 'jbj',
+      email: 'test@test.com',
+      password: 'password'
+    });
+
+    const agent = request.agent(app);
+
+    await agent
+      .post('/api/v1/auth/login')
+      .send({ username: 'jbj', email: 'test@test.com', password: 'password' });
+
+    return agent
+      .get('/api/v1/auth/verify')
+      .then(res => {
+        expect(res.body).toEqual({
+          id: user1.id,
+          email: 'test@test.com',
+          __v: 0
+        });
+      });
+  });
+
 });

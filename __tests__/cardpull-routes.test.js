@@ -6,6 +6,7 @@ const connect = require('../lib/utils/connect');
 const mongoose = require('mongoose');
 
 const CardPull = require('../lib/models/CardPull');
+const User = require('../lib/models/User');
 
 
 describe('crud routes', () => {
@@ -34,9 +35,15 @@ describe('crud routes', () => {
     return mongoose.connection.close();
   });
 
-  it('can create a new cardpull', () => {
+  it('can create a new cardpull', async () => {
+    const agent = request.agent(app);
+
+    await agent
+      .post('/api/v1/auth/signup')
+      .send({ email: 'jbj@jbj.com', username: 'jbj', password: 'password' });
+
     const date = new Date();
-    return request(app)
+    return agent
       .post('/api/v1/cardpulls')
       .send({
         date,
