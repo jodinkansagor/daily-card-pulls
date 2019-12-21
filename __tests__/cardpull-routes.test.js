@@ -61,8 +61,14 @@ describe('crud routes', () => {
       });
   });
 
-  it('can get one card', () => {
-    return request(app)
+  it('can get one card', async () => {
+    const agent = request.agent(app);
+
+    await agent
+      .post('/api/v1/auth/signup')
+      .send({ email: 'jbj@jbj.com', username: 'jbj', password: 'password' });
+
+    return agent
       .get(`/api/v1/cardpulls/${cardPull._id}`)
       .then(res => {
         expect(res.body).toEqual({
@@ -75,8 +81,14 @@ describe('crud routes', () => {
       });
   });
 
-  it('can get all cards', () => {
-    return request(app)
+  it('can get all cards', async () => {
+    const agent = request.agent(app);
+
+    await agent
+      .post('/api/v1/auth/signup')
+      .send({ email: 'jbj@jbj.com', username: 'jbj', password: 'password' });
+
+    return agent
       .get('/api/v1/cardpulls/')
       .then(res => {
         expect(res.body).toEqual([{
