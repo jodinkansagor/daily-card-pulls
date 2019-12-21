@@ -68,4 +68,18 @@ describe('crud routes', () => {
       });
   });
 
+  it('can get all cards', () => {
+    return request(app)
+      .get('/api/v1/cardpulls/')
+      .then(res => {
+        expect(res.body).toEqual([{
+          _id: cardPull.id,
+          date: date.toISOString(),
+          card: 'The Empress',
+          explanation: 'She has the power',
+          __v: 0
+        }]);
+      });
+  });
+
 });
