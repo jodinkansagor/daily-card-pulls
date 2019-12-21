@@ -102,8 +102,13 @@ describe('crud routes', () => {
   });
 
 
-  it('can update a card by id', () => {
-    return request(app)
+  it('can update a card by id', async () => {
+    const agent = request.agent(app);
+
+    await agent
+      .post('/api/v1/auth/signup')
+      .send({ email: 'jbj@jbj.com', username: 'jbj', password: 'password' });
+    return agent
       .patch(`/api/v1/cardpulls/${cardPull.id}`)
       .send({ explanation: 'She still has the power.' })
       .then(res => {
@@ -117,8 +122,13 @@ describe('crud routes', () => {
       });
   });
 
-  it('can delete a card by id', () => {
-    return request(app)
+  it('can delete a card by id', async () => {
+    const agent = request.agent(app);
+
+    await agent
+      .post('/api/v1/auth/signup')
+      .send({ email: 'jbj@jbj.com', username: 'jbj', password: 'password' });
+    return agent
       .delete(`/api/v1/cardpulls/${cardPull.id}`)
       .then(res => {
         expect(res.body).toEqual({
