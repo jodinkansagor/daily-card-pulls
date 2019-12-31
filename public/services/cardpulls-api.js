@@ -1,13 +1,12 @@
 
-const URL = 'http://localhost:27017/card-pulls';
+const URL = 'http://localhost:7890/api/v1/cardpulls';
 
 export async function getcardPulls() {
   let queryString = window.location.hash.slice(1);
-  const url = `${URL}`;
+  const url = `${URL}?${queryString}`;
   const response = await fetch(url);
-  console.log(response);
   const data = await response.json();
   return data;
 }
 
-// const URL = 'http://coffee-plus-cards.herokuapp.com/api/v1/cardpulls';
+

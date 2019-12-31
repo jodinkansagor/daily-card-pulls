@@ -7,7 +7,7 @@ class CardList extends Component {
 
     cardPulls.forEach(cardPull => {
       const props = { cardPull };
-      const cardItem = new cardItem(props);
+      const cardItem = new CardItem(props);
       const cardItemDOM = cardItem.renderDOM();
       dom.appendChild(cardItemDOM);
     });

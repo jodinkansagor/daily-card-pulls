@@ -4,6 +4,8 @@ import Footer from '../common/Footer.js';
 import Loading from '../common/Loading.js';
 import { getcardPulls } from '../services/cardpulls-api.js';
 import CardList from '../cardlist/CardList.js';
+import Nav from '../common/Nav.js';
+import Filter from '../cardlist/Filter.js';
 
 class CardListApp extends Component {
 
@@ -13,8 +15,12 @@ class CardListApp extends Component {
     dom.prepend(header.renderDOM());
 
     const main = dom.querySelector('main');
-    // const filter = new filter({ cardPulls: [] });
-    // main.appendChild(filter.renderDOM());
+    const nav = new Nav();
+    main.appendChild(nav.renderDOM());
+    const filter = new Filter({ cardPulls: [] });
+    main.appendChild(filter.renderDOM());
+
+    
 
     const list = new CardList({ cardPulls: [] });
     main.appendChild(list.renderDOM());
