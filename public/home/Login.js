@@ -31,7 +31,9 @@ class Login extends Component {
 
   renderHTML() {
     return /*html*/`
+          <div class = "login">
             <form class="auth-form standard" id = "form">
+                <h4>Sign In</h4>
                 <p>
                     <label for="signin-email">Email</label>
                     <input id="signin-email" type="email" name="email" required placeholder="you@somewhere.com">
@@ -43,10 +45,11 @@ class Login extends Component {
                     placeholder="********">
                 </p>
 
-                <p>
+                <div>
                     <button>Sign In</button>
-                </p>
+                </div>
             </form>
+          </div>
         `;
   }
 
