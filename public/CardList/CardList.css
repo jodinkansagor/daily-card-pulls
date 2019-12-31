@@ -1,0 +1,30 @@
+.filter {
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+select {
+  margin: 5px;
+}
+
+button {
+  margin-bottom: 5px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+  border: 1px solid black;
+}

@@ -17,6 +17,7 @@ class CardListApp extends Component {
     const main = dom.querySelector('main');
     const nav = new Nav();
     main.appendChild(nav.renderDOM());
+
     const filter = new Filter({ cardPulls: [] });
     main.appendChild(filter.renderDOM());
 
@@ -40,7 +41,7 @@ class CardListApp extends Component {
     loadcardPulls();
 
     window.addEventListener('hashchange', () => {
-      loadcardPulls;
+      loadcardPulls();
     });
 
   }

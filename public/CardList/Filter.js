@@ -2,7 +2,24 @@ import Component from '../Component.js';
 
 class Filter extends Component {
   onRender(form) {
-    // const cardPullFilterInput = form.querySelector('select[name=caterogy]');
+    const cardPullFilterInput = form.querySelectorAll('select[name=category]');
+    
+    function updateControls() {
+      const queryString = window.location.hash.slice(1);
+      const searchParams = new URLSearchParams(queryString);
+      const category = searchParams.get('category');
+      console.log(category);
+      if (category) {
+        cardPullFilterInput.forEach(filterOption => {
+          filterOption.selected === filterOption.value;
+          console.log(filterOption.value);
+        });
+      }
+    }
+
+    window.addEventListener('hashchange', () => {
+      updateControls();
+    });
 
     form.addEventListener('submit', event => {
       event.preventDefault();
@@ -13,6 +30,7 @@ class Filter extends Component {
       searchParams.set('category', formData.get('category'));
 
       window.location.hash = searchParams.toString();
+      // window.location.reload();
     });
   }
 

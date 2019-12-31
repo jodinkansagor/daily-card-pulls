@@ -1,10 +1,32 @@
 header {
   font-family: 'Open Sans', sans-serif;
   color: #525252;
-  font-size: 15px
+  font-size: 15px;
 }
 
+header h1 {
+  margin: 5px;
+}
 
+header h2 {
+  margin: 5px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 5px;
+}
+
+.nav a {
+
+  background-color: #525252;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  border-radius: 5px;
+}
 
 .footer {
   font-family: 'Open Sans', sans-serif;
