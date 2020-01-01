@@ -15,6 +15,11 @@ button {
   text-decoration: none;
   margin-left: 10px;
   margin-right: 10px;
+  border-style: none;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 label {
@@ -33,6 +38,7 @@ button {
 
 main {
   background-image: url('../assets/cards.png');
+  background-repeat: no-repeat;
 
 }
 

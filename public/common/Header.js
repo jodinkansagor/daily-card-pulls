@@ -5,8 +5,12 @@ class Header extends Component {
     return /*html*/`
       <header>
         <div class = "header-contents">
-          <h1>COFFEE + CARDS PDX</h1>
-          <h2>Daily Card Pulls</h2>
+          <div class="name">
+            <h1>COFFEE + CARDS PDX</h1>
+          </div>
+          <div class="subtitle">
+            <h2>Daily Card Pulls</h2>
+          </div>
           <hr>
         </div>
       </header>

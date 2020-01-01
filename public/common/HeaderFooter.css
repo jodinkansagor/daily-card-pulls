@@ -50,3 +50,29 @@ header h2 {
   width: 300px;
   border-radius: 100%;
 }
+
+.nav a:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 550px) {
+  .header-contents {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    /* justify-content: space-between; */
+  }
+
+  .name {
+    justify-content: flex-start;
+  }
+
+  .subtitle {
+    width: 100%;
+    justify-content: flex-end;
+    text-align: right
+  }
+
+
+}
