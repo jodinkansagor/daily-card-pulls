@@ -32,38 +32,49 @@ class CardInput extends Component {
 
   renderHTML() {
     return /*html*/ `
+    <div class = "main">
     <form class = "post-card">
-      <h2>What did you pull today?</h2>
-    <p>
-          <button>Submit</button>
-      </p>
-      <p>
-        <label for="date">Date</label>
-        <input id="date" type="date" name="date" required>
-      </p>
-                
-      <p>
-          <label for="card">Card</label>
-          <input id="card" type="text" name="card" required>
-      </p>
+      <section class = "title">
+        <h3>What did you pull today?</h2>
+        <button>Submit</button>
+      </section>
+      <section class = "inputs">
+        <section class = "textboxes" >
+          <p>
+            <label for="date">Date</label>
+            <input id="date" type="date" name="date" required>
+          </p>
+                    
+          <p>
+              <label for="card">Card</label>
+              <input id="card" type="text" name="card" required>
+          </p>
 
-      <p>
-          <label for="deck">Deck</label>
-          <input id="deck" type="text" name="deck" required>
-      </p>
-
-      <p> 
-        <input type="checkbox" name="category" value="love">Love
-        <input type="checkbox" name="category" value="work">work 
-        <input type="checkbox" name="category" value="home">Home
-        <input type="checkbox" name="category" value="family">family<input type="checkbox" name="category" value="friends">friends
-        <input type="checkbox" name="category" value="activities">Activities 
-      </p> 
-      <p>
-          <label for="explanation">Explanation</label>
-          <input id="explanation" type="text" rows=6 name="explanation" required>
-      </p>
-            </form>
+          <p>
+              <label for="deck">Deck</label>
+              <input id="deck" type="text" name="deck" required>
+          </p>
+        </section>
+        <p> 
+          <div class = "category">
+            <div class="group1">
+              <input type="checkbox" name="category" value="Love">Love
+              <input type="checkbox" name="category" value="Work">Work 
+              <input type="checkbox" name="category" value="Home">Home
+            </div>
+            <div class="group2">
+              <input type="checkbox" name="category" value="Friends">Friends
+              <input type="checkbox" name="category" value="Activities">Activities
+              <input type="checkbox" name="category" value="None">None 
+            </div>
+          </div>
+        </p> 
+        <p>
+            <textarea id="explanation" rows=6 cols=40 name="explanation" required> </textarea>
+        </p>
+      </div>
+      </form>
+    </div>
     `;
   }
 }

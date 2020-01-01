@@ -5,7 +5,9 @@ class CardList extends Component {
   onRender(dom) {
     const cardPulls = this.props.cardPulls;
 
-    cardPulls.forEach(cardPull => {
+    let reverseCardPulls = cardPulls.reverse();
+
+    reverseCardPulls.forEach(cardPull => {
       const props = { cardPull };
       const cardItem = new CardItem(props);
       const cardItemDOM = cardItem.renderDOM();

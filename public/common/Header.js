@@ -11,8 +11,9 @@ class Header extends Component {
           <div class="subtitle">
             <h2>Daily Card Pulls</h2>
           </div>
-          <hr>
         </div>
+      
+        
       </header>
     `;
   }

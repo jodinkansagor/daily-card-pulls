@@ -37,8 +37,10 @@ button {
 }
 
 main {
-  background-image: url('../assets/cards.png');
-  background-repeat: no-repeat;
+  background-image: url('../assets/cards.png') ;
+  width: 100%;
+  margin-left: 3px;
+  margin-right: 10px
 
 }
 
@@ -60,17 +62,43 @@ li {
   list-style: none;
   border: 1px solid black;
   width: 300px;
+  height: 275px;
   padding: 5px;
-  margin-bottom: 7px;
-  margin-top: 7px;
+  margin: 7px;
+ 
   background-color: rgba(255, 255, 255, 0.5);
 }
-
-
 
 .explanation {
   background-color: white;
   padding: 5px;
+  height: 105px;
   border: 1px solid black;
+  overflow-y: scroll;
+}
 
+@media (min-width: 750px) {
+
+
+
+  .card-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* .all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  } */
 }

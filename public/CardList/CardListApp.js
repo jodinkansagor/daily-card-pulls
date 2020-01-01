@@ -49,7 +49,9 @@ class CardListApp extends Component {
   renderHTML() {
     return /*html*/`
       <div>
-        <main></main>
+        <section class = "all">
+          <main></main>
+        </section>
       </div>
       `;
   }
