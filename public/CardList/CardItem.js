@@ -6,8 +6,6 @@ class CardItem extends Component {
     const cardPull = this.props.cardPull;
     console.log(cardPull._id);
     const deleteButton = dom.querySelector('button[id="delete"]');
-    // const editButton = dom.querySelector('button[id="edit"]');
-
 
     deleteButton.addEventListener('click', () => {
       if (confirm('Are you sure you want to delete?')) {
@@ -44,7 +42,6 @@ class CardItem extends Component {
         <p>${cardPullCategory.toUpperCase()}</p>
         <p class="explanation">${cardPull.explanation}</p>
         <div class="buttons">
-          <button id="edit">Edit</button>
           <button id="delete">Delete</button>
         </div>
       </li>
