@@ -6,7 +6,6 @@ const connect = require('../lib/utils/connect');
 const mongoose = require('mongoose');
 
 const CardPull = require('../lib/models/CardPull');
-const User = require('../lib/models/User');
 
 
 describe('crud routes', () => {
@@ -48,7 +47,8 @@ describe('crud routes', () => {
       .send({
         date,
         card: 'The Empress',
-        explanation: 'She got power.'
+        explanation: 'She got power.',
+        category: []
       })
       .then(res => {
         expect(res.body).toEqual({
@@ -56,6 +56,7 @@ describe('crud routes', () => {
           date: date.toISOString(),
           card: 'The Empress',
           explanation: 'She got power.',
+          category: [],
           __v: 0
         });
       });
@@ -76,6 +77,7 @@ describe('crud routes', () => {
           date: date.toISOString(),
           card: 'The Empress',
           explanation: 'She has the power.',
+          category: [],
           __v: 0
         });
       });
@@ -96,6 +98,7 @@ describe('crud routes', () => {
           date: date.toISOString(),
           card: 'The Empress',
           explanation: 'She has the power.',
+          category: [],
           __v: 0
         }]);
       });
@@ -117,6 +120,7 @@ describe('crud routes', () => {
           date: date.toISOString(),
           card: 'The Empress',
           explanation: 'She still has the power.',
+          category: [],
           __v: 0
         });
       });
@@ -136,6 +140,7 @@ describe('crud routes', () => {
           date: date.toISOString(),
           card: 'The Empress',
           explanation: 'She has the power.',
+          category: [],
           __v: 0
         });
       });
