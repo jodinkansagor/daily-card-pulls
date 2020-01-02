@@ -40,12 +40,12 @@ class Filter extends Component {
         <label>Choose a category:
           <select class = "category" name = "category">
             <option value="">All</option>
-            <option value="love">Love</option>
-            <option value="work">Work</option>
-            <option value="home">Home</option>
-            <option value="family">Family</option>
-            <option value="friends">Friends</option>
-            <option value="activities">Activites</option>
+            <option value="Love">Love</option>
+            <option value="Work">Work</option>
+            <option value="Home">Home</option>
+            <option value="Friends">Friends</option>
+            <option value="Activities">Activities</option>
+            <option value="activities">None</option>None
         </select>
         <section class = "button">
           <button>Get Card Pulls</button>

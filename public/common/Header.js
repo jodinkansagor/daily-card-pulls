@@ -6,7 +6,7 @@ class Header extends Component {
       <header>
         <div class = "header-contents">
           <div class="name">
-            <h1>COFFEE + CARDS PDX</h1>
+            <h1><a href ="/">COFFEE + CARDS PDX</a></h1>
           </div>
           <div class="subtitle">
             <h2>Daily Card Pulls</h2>

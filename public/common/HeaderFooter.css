@@ -1,7 +1,12 @@
 header {
   font-family: 'Open Sans', sans-serif;
-  color: #525252;
   font-size: 15px;
+  color: #525252;
+}
+
+header a {
+  text-decoration: none;
+  color: #525252;
 }
 
 hr {

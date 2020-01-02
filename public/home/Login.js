@@ -4,7 +4,6 @@ class Login extends Component {
 
   onRender(form) {
 
-    
     form.addEventListener('submit', event => {
       event.preventDefault();
       const formData = new FormData(event.target);
@@ -22,11 +21,19 @@ class Login extends Component {
         body: JSON.stringify(user)
       })
         .then(res => res.json())
-        .then(() => {
-          window.location.assign('/cardpulls.html');
+        .then((user) => {
+          if (user._id) {
+            console.log(user);
+            window.location.assign('/cardpulls.html');
+          } else {
+            const error = document.createElement('div');
+            error.innerHTML = '<p>User does not exist</p>';
+            form.appendChild(error);
+            if(form.children.length > 2) form.removeChild(form.lastChild);
+          }
         });
     });
-    
+
   }
 
   renderHTML() {
