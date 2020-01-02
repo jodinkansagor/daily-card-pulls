@@ -9,12 +9,27 @@ import verifyLogin from '../utils/verifyLogin.js';
 class App extends Component {
 
   onRender(dom) {
-    
+
     const header = new Header();
     dom.prepend(header.renderDOM());
 
-    const login = new Login();
-    dom.appendChild(login.renderDOM());
+    function verifyLogin() {
+      fetch('/api/v1/auth/verify', {
+        credentials: 'include'
+      })
+        .then(res => res.json())
+        .then(user => {
+          if (user.id) {
+            console.log(user);
+            window.location.assign('/cardpulls.html');
+          } else {
+            const login = new Login();
+            dom.appendChild(login.renderDOM());
+          }
+        });
+    }
+
+    verifyLogin();
 
     const footer = new Footer();
     dom.appendChild(footer.renderDOM());

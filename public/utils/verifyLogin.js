@@ -13,11 +13,5 @@ function verifyLogin() {
     });
 }
 
-function displayForm() {
-  const h1 = document.createElement('h1');
-  h1.textContent = user.username;
-
-
-}
 export default verifyLogin;
 

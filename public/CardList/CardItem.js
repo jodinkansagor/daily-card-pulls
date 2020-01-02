@@ -4,7 +4,6 @@ class CardItem extends Component {
 
   onRender(dom) {
     const cardPull = this.props.cardPull;
-    console.log(cardPull);
     const deleteButton = dom.querySelector('button[id="delete"]');
 
     deleteButton.addEventListener('click', () => {
