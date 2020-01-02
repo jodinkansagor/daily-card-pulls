@@ -12,7 +12,7 @@ class CardInput extends Component {
       const cardPull = {
         date: formData.get('date'),
         card: formData.get('card'), deck: formData.get('deck'),
-        category: formData.get('category'),
+        category: formData.getAll('category'),
         explanation: formData.get('explanation')
       };
       fetch('/api/v1/cardpulls', {
