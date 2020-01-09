@@ -4,6 +4,13 @@ class Login extends Component {
 
   onRender(form) {
 
+    // const signUpButton = document.getElementById('sign-up');
+    // signUpButton.addEventListener('click', () => {
+    //   const 
+    // });
+
+
+    // const form = dom.querySelector('form');
     form.addEventListener('submit', event => {
       event.preventDefault();
       const formData = new FormData(event.target);
@@ -23,7 +30,6 @@ class Login extends Component {
         .then(res => res.json())
         .then((user) => {
           if (user._id) {
-            console.log(user);
             window.location.assign('/cardpulls.html');
           } else {
             const error = document.createElement('div');
@@ -39,7 +45,9 @@ class Login extends Component {
   renderHTML() {
     return /*html*/`
           <div class = "login">
+          
             <form class="auth-form standard" id = "form">
+                
                 <h4>Sign In</h4>
                 <p>
                     <label for="signin-email">Email</label>

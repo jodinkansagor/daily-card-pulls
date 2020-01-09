@@ -3,21 +3,38 @@ import Component from '../Component.js';
 class SignUp extends Component {
 
   onRender(form) {
-    const onSignUp = this.props.onSignUp;
 
     form.addEventListener('submit', event => {
       event.preventDefault();
 
-      const formData = new FormDate(form);
+      const formData = new FormData(form);
       const user = {
         userName: formData.get('username'),
         email: formData.get('email'),
         password: formData.get('password')
       };
-
-      onSignUp(user);
+      fetch('/api/v1/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+      })
+        .then(res => res.json())
+        .then((user) => {
+          fetch('/api/v1/auth/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+          });
+        });
     });
+
   }
+
+
 
   renderHTML() {
     return /*html*/ `

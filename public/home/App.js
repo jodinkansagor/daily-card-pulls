@@ -3,7 +3,7 @@ import Header from '../common/Header.js';
 // import SignUp from './SignUp.js';
 import Login from './Login.js';
 import Footer from '../common/Footer.js';
-import verifyLogin from '../utils/verifyLogin.js';
+
 
 
 class App extends Component {
@@ -13,6 +13,9 @@ class App extends Component {
     const header = new Header();
     dom.prepend(header.renderDOM());
 
+    // const signUpButton = document.createElement('button');
+    // dom.appendChild(signUpButton.renderDOM());
+
     function verifyLogin() {
       fetch('/api/v1/auth/verify', {
         credentials: 'include'
@@ -20,19 +23,22 @@ class App extends Component {
         .then(res => res.json())
         .then(user => {
           if (user.id) {
-            console.log(user);
             window.location.assign('/cardpulls.html');
           } else {
+            
             const login = new Login();
             dom.appendChild(login.renderDOM());
+            const footer = new Footer();
+            dom.appendChild(footer.renderDOM());
           }
         });
     }
 
     verifyLogin();
 
-    const footer = new Footer();
-    dom.appendChild(footer.renderDOM());
+
+
+
 
   }
 
