@@ -31,13 +31,13 @@ class CardItem extends Component {
       return acc += `<span>${curr} </span>`;
     }, '');
     
-    let cardPullDate = new Date(cardPull.date).toISOString().split('T')[0];
+    let cardPullDate = new Date(cardPull.date).toString().slice(0, 15);
 
     return /*html*/ `
       <li class = "card-item" id = "card-item">
-        <h2>Date pulled: ${cardPullDate}</h2>
-        <h2>Card: ${cardPull.card}</h2>
-        <h2>Deck: ${cardPull.deck}</h2>
+        <h2><u>Date pulled:</u> ${cardPullDate}</h2>
+        <h2><u>Card:</u> ${cardPull.card}</h2>
+        <h2><u>Deck:</u> ${cardPull.deck}</h2>
         <p>${cardPullCategory.toUpperCase()}</p>
         <p class="explanation">${cardPull.explanation}</p>
         <div class="buttons">

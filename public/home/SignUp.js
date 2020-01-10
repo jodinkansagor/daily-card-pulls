@@ -7,7 +7,7 @@ class SignUp extends Component {
     form.addEventListener('submit', event => {
       event.preventDefault();
 
-      const formData = new FormData(form);
+      const formData = new FormData(event.target);
       const user = {
         username: formData.get('username'),
         email: formData.get('email'),
@@ -42,29 +42,30 @@ class SignUp extends Component {
   renderHTML() {
     return /*html*/ `
       <div class ="signup">
-      <form class = "auth-form standard" id="form">
-        <h4>Create an account</h4>
-        <p>
-          <label for="username">Name</label>
-          <input id="username" name="username" required placeholder="Your Name">
-        </p>
+        <a href="/" class="already-user">I already have an account</a>
 
-        <p>
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" required placeholder="you@somewhere.com">
-        </p>
+        <form class = "auth-form standard" id="form">
+          <h4>Create an account</h4>
+          <p>
+            <label for="username">Name</label>
+            <input id="username" name="username" required placeholder="Your Name">
+          </p>
 
-        <p>
-          <label for="password">Password</label>
-          <input id="password" type="password" name="password" required>
-        </p>
+          <p>
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required placeholder="you@somewhere.com">
+          </p>
 
-        <div class="bottom-buttons">
-          <button>Sign Up</button>
-          <a href="/" class="already-user">I already have an account</a>
-        </div>
+          <p>
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" required>
+          </p>
 
-      </form>
+          <div class="bottom-buttons">
+            <button>Sign Up</button>
+          </div>
+
+        </form>
     </div>
             `;
   }

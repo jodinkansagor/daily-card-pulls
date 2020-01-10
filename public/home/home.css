@@ -44,7 +44,11 @@ button {
   margin-bottom: 10px;
   background-color: #525252;
   color: white;
-  border: none
+  border: none;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  width: 195px;
+  height: 27px;
 }
 
 h4 {
@@ -63,8 +67,14 @@ h4 {
   color: white;
   text-decoration: none;
   padding: 2px;
-  font-size: 10px;
+  font-size: 14px;
   margin-bottom: 5px;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 195px;
+  text-align: center;
+  height: 23px;
 }
 
 .bottom-buttons {

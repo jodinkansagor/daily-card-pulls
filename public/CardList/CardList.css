@@ -16,6 +16,11 @@ button {
   margin-left: 10px;
   margin-right: 10px;
   border-style: none;
+  height: 31.82px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 115px;
+  font-size: 16px
 }
 
 button:hover {
@@ -32,9 +37,7 @@ select {
   margin: 5px;
 }
 
-button {
-  margin-bottom: 5px;
-}
+
 
 main {
   background-image: url('../assets/cards.png') ;
@@ -62,7 +65,7 @@ li {
   list-style: none;
   border: 1px solid black;
   width: 300px;
-  height: 305px;
+  height: 315px;
   padding: 5px;
   margin: 7px;
  
@@ -83,8 +86,10 @@ li {
   justify-content: space-around;
 }
 
+
+
 #edit, #delete {
-  width: 50px;
+  width: 75px;
 }
 
 @media (min-width: 750px) {
