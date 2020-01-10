@@ -1,0 +1,47 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  /* color: #525252; */
+}
+
+.post-card {
+  width: 350px;
+  border: 1px solid black;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  background-image: url('../assets/cardforinput.png');
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title button {
+  height: 25px;
+  background-color: #525252;
+  border-style: none;
+  color: white;
+}
+
+.title h3, button {
+  margin: 5px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#explanation textarea {
+  border: 1px solid red;
+}
