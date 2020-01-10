@@ -96,7 +96,7 @@ describe('app routes', () => {
       .get('/api/v1/auth/verify')
       .then(res => {
         expect(res.body).toEqual({
-          id: user1.id,
+          _id: user1.id,
           email: 'test@test.com',
           __v: 0
         });
