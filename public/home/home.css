@@ -4,15 +4,26 @@
   align-items: center;
 }
 
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center 
+}
+
+.no-display {
+  display: none
+}
+
 #form {
   width: 315px;
-  height: 215px;
+  height: 100%;
   background-image: url('../assets/cardforli2.png');
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Open Sans', sans-serif;
-  color: #525252
+  color: #525252;
+  background-size: cover
 }
 
 p {
@@ -30,9 +41,19 @@ label {
 
 button {
   margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #525252;
+  color: white;
+  border: none
 }
 
 h4 {
   font-size: 20px;
   margin-bottom: 15px;
+}
+
+.switch{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -9,10 +9,11 @@ class SignUp extends Component {
 
       const formData = new FormData(form);
       const user = {
-        userName: formData.get('username'),
+        username: formData.get('username'),
         email: formData.get('email'),
         password: formData.get('password')
       };
+
       fetch('/api/v1/auth/signup', {
         method: 'POST',
         headers: {
@@ -22,14 +23,16 @@ class SignUp extends Component {
       })
         .then(res => res.json())
         .then((user) => {
-          fetch('/api/v1/auth/login', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(user)
-          });
+          if (user._id) {
+            window.location.assign('/cardpulls.html');
+          } else {
+            const error = document.createElement('div');
+            error.innerHTML = '<p>User does not exist</p>';
+            form.appendChild(error);
+            if (form.children.length > 2) form.removeChild(form.lastChild);
+          }
         });
+
     });
 
   }
@@ -38,29 +41,30 @@ class SignUp extends Component {
 
   renderHTML() {
     return /*html*/ `
- 
-      <form class = "auth-form standard">
+      <div class ="signup">
+      <form class = "auth-form standard" id="form">
+        <h4>Create an account</h4>
         <p>
           <label for="username">Name</label>
           <input id="username" name="username" required placeholder="Your Name">
-                </p>
+        </p>
 
-          <p>
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email" required placeholder="you@somewhere.com">
-                </p>
+        <p>
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required placeholder="you@somewhere.com">
+        </p>
 
-            <p>
-              <label for="password">Password</label>
-              <input id="password" type="password" name="password" required>
-                </p>
+        <p>
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password" required>
+        </p>
 
-              <p>
-                <button>Sign Up</button>
-              </p>
+        <div>
+          <button>Sign Up</button>
+        </div>
 
-            </form>
-
+      </form>
+    </div>
             `;
   }
 }

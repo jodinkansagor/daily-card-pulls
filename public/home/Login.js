@@ -4,13 +4,7 @@ class Login extends Component {
 
   onRender(form) {
 
-    // const signUpButton = document.getElementById('sign-up');
-    // signUpButton.addEventListener('click', () => {
-    //   const 
-    // });
 
-
-    // const form = dom.querySelector('form');
     form.addEventListener('submit', event => {
       event.preventDefault();
       const formData = new FormData(event.target);
@@ -48,7 +42,7 @@ class Login extends Component {
           
             <form class="auth-form standard" id = "form">
                 
-                <h4>Sign In</h4>
+                <h4>Log In</h4>
                 <p>
                     <label for="signin-email">Email</label>
                     <input id="signin-email" type="email" name="email" required placeholder="you@somewhere.com">
@@ -61,7 +55,7 @@ class Login extends Component {
                 </p>
 
                 <div>
-                    <button>Sign In</button>
+                    <button>Log In</button>
                 </div>
             </form>
           </div>
