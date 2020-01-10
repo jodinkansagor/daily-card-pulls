@@ -57,3 +57,18 @@ h4 {
   flex-direction: column;
   align-items: center;
 }
+
+.already-user {
+  background-color: #525252;
+  color: white;
+  text-decoration: none;
+  padding: 2px;
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.bottom-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -59,8 +59,9 @@ class SignUp extends Component {
           <input id="password" type="password" name="password" required>
         </p>
 
-        <div>
+        <div class="bottom-buttons">
           <button>Sign Up</button>
+          <a href="/" class="already-user">I already have an account</a>
         </div>
 
       </form>
