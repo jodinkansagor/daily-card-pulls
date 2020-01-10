@@ -31,7 +31,7 @@ class CardItem extends Component {
       return acc += `<span>${curr} </span>`;
     }, '');
     
-    let cardPullDate = new Date(cardPull.date).toISOString().split('T')[0];
+    let cardPullDate = new Date(cardPull.date).toString().slice(0, 15);
 
     return /*html*/ `
       <li class = "card-item" id = "card-item">
