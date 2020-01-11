@@ -28,9 +28,10 @@ class Filter extends Component {
 
       const searchParams = new URLSearchParams(queryString);
       searchParams.set('category', formData.get('category'));
+      searchParams.set('startDate', formData.get('startDate'));
+      searchParams.set('endDate', formData.get('endDate'));
 
       window.location.hash = searchParams.toString();
-      // window.location.reload();
     });
   }
 
@@ -47,6 +48,12 @@ class Filter extends Component {
             <option value="Activities">Activities</option>
             <option value="activities">None</option>None
         </select>
+        <section class = "date-range">
+            <label for="date">Start Date</label>
+            <input id="date" type="date" name="startDate" required>
+            <label for="date">End Date</label>
+            <input id="date" type="date" name="endDate" required>
+        </section>
         <section class = "button">
           <button>Get Card Pulls</button>
         </section>
