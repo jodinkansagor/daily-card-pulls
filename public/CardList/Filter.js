@@ -8,11 +8,10 @@ class Filter extends Component {
       const queryString = window.location.hash.slice(1);
       const searchParams = new URLSearchParams(queryString);
       const category = searchParams.get('category');
-      console.log(category);
       if (category) {
         cardPullFilterInput.forEach(filterOption => {
           filterOption.selected === filterOption.value;
-          console.log(filterOption.value);
+         
         });
       }
     }
@@ -50,9 +49,9 @@ class Filter extends Component {
         </select>
         <section class = "date-range">
             <label for="date">Start Date</label>
-            <input id="date" type="date" name="startDate" required>
+            <input class="date" type="date" name="startDate" required>
             <label for="date">End Date</label>
-            <input id="date" type="date" name="endDate" required>
+            <input class="date" type="date" name="endDate" required>
         </section>
         <section class = "button">
           <button>Get Card Pulls</button>
