@@ -1,0 +1,90 @@
+header {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  color: #525252;
+}
+
+header a {
+  text-decoration: none;
+  color: #525252;
+}
+
+hr {
+  margin-right: 5px;
+}
+
+header h1 {
+  margin: 5px;
+}
+
+header h2 {
+  margin: 5px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.nav a {
+  background-color: #525252;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px
+}
+
+.nav button {
+  
+}
+
+.footer {
+  font-family: 'Open Sans', sans-serif;
+  color: #525252;
+  font-size: 12px;
+  text-align: center;
+}
+
+.loading-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 30%;
+  width: 100vw;
+  opacity: 0.7;
+}
+
+.loading-container img {
+  width: 300px;
+  border-radius: 100%;
+}
+
+.nav a:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 550px) {
+  .header-contents {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 97%;
+    justify-content: space-between;
+  }
+
+  /* .name {
+    justify-content: flex-start;
+  }
+
+  .subtitle {
+    width: 100%;
+    justify-content: flex-end;
+    text-align: right
+  } */
+
+}

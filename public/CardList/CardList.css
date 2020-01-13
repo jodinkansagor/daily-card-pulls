@@ -1,0 +1,119 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #525252
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background-color: #525252;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-style: none;
+  height: 31.82px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 115px;
+  font-size: 16px
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+select {
+  margin: 5px;
+}
+
+
+
+main {
+  background-image: url('../assets/cards.png') ;
+  width: 100%;
+  margin-left: 3px;
+  margin-right: 10px
+
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+}
+
+li h2 {
+  font-size: 17px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+li {
+  list-style: none;
+  border: 1px solid black;
+  width: 300px;
+  height: 315px;
+  padding: 5px;
+  margin: 7px;
+ 
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.explanation {
+  background-color: white;
+  padding: 5px;
+  height: 105px;
+  border: 1px solid black;
+  overflow-y: scroll;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+
+#edit, #delete {
+  width: 75px;
+}
+
+@media (min-width: 750px) {
+
+
+
+  .card-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* .all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  } */
+}
