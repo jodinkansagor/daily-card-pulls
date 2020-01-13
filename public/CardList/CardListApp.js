@@ -21,7 +21,7 @@ class CardListApp extends Component {
     const filter = new Filter({ cardPulls: [] });
     main.appendChild(filter.renderDOM());
 
-    
+
 
     const list = new CardList({ cardPulls: [] });
     main.appendChild(list.renderDOM());
@@ -38,7 +38,7 @@ class CardListApp extends Component {
       loading.update({ loading: false });
     }
 
-    loadcardPulls();
+     loadcardPulls();
 
     window.addEventListener('hashchange', () => {
       loadcardPulls();
