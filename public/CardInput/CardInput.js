@@ -16,23 +16,6 @@ class CardInput extends Component {
         explanation: formData.get('explanation')
       };
 
-      const dateAsDate = new Date(cardPull.date);
-      const dateAsTime = dateAsDate.getTime()
-      const url = `http://api.farmsense.net/v1/moonphases/?d=${dateAsTime}`;
-
-      async function getMoonPhase() {
-
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log(data);
-        return data;
-      }
-      // console.log(cardPull.date)
-      // console.log(new Date(cardPull.date));
-      let moonPhase = getMoonPhase()
-        .then(console.log(moonPhase));
-      
-
       fetch('/api/v1/cardpulls', {
         method: 'POST',
         headers: {
