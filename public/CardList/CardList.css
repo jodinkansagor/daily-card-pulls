@@ -40,7 +40,8 @@ select {
 
 
 main {
-  background-image: url('../assets/cards.png') ;
+  background-image: url('../assets/cards.png');
+  background-size:cover;
   width: 100%;
   margin-left: 3px;
   margin-right: 10px

@@ -23,6 +23,7 @@ describe('crud routes', () => {
 
   let date;
   let cardPull;
+  let user;
   beforeEach(async () => {
     user = {
       username: 'jbj',
@@ -33,6 +34,7 @@ describe('crud routes', () => {
     const res = await agent
       .post('/api/v1/auth/signup')
       .send(user);
+
     date = new Date();
     cardPull = await CardPull.create({
       date,
@@ -98,11 +100,6 @@ describe('crud routes', () => {
   });
 
   it('can get all cards', async () => {
-    // const agent = request.agent(app);
-
-    // await agent
-    //   .post('/api/v1/auth/signup')
-    //   .send({ email: 'jbj@jbj.com', username: 'jbj', password: 'password' });
 
     return agent
       .get('/api/v1/cardpulls/')
@@ -118,7 +115,6 @@ describe('crud routes', () => {
         }]);
       });
   });
-
 
   it('can update a card by id', async () => {
     const agent = request.agent(app);
@@ -142,7 +138,7 @@ describe('crud routes', () => {
       });
   });
 
-  it.skip('can delete a card by id', async () => {
+  it('can delete a card by id', async () => {
     const agent = request.agent(app);
 
     await agent

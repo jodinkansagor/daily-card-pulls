@@ -8,11 +8,10 @@ class Filter extends Component {
       const queryString = window.location.hash.slice(1);
       const searchParams = new URLSearchParams(queryString);
       const category = searchParams.get('category');
-      console.log(category);
       if (category) {
         cardPullFilterInput.forEach(filterOption => {
           filterOption.selected === filterOption.value;
-          console.log(filterOption.value);
+         
         });
       }
     }
@@ -28,9 +27,10 @@ class Filter extends Component {
 
       const searchParams = new URLSearchParams(queryString);
       searchParams.set('category', formData.get('category'));
+      searchParams.set('startDate', formData.get('startDate'));
+      searchParams.set('endDate', formData.get('endDate'));
 
       window.location.hash = searchParams.toString();
-      // window.location.reload();
     });
   }
 
@@ -47,6 +47,12 @@ class Filter extends Component {
             <option value="Activities">Activities</option>
             <option value="activities">None</option>None
         </select>
+        <section class = "date-range">
+            <label for="date">Start Date</label>
+            <input class="date" type="date" name="startDate" required>
+            <label for="date">End Date</label>
+            <input class="date" type="date" name="endDate" required>
+        </section>
         <section class = "button">
           <button>Get Card Pulls</button>
         </section>
