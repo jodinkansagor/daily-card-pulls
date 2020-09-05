@@ -3,9 +3,9 @@ import Header from '../common/Header.js';
 import Footer from '../common/Footer.js';
 import Loading from '../common/Loading.js';
 import { getcardPulls } from '../services/cardpulls-api.js';
-import CardList from '../cardlist/CardList.js';
+import CardList from '../CardList/CardList.js';
 import Nav from '../common/Nav.js';
-import Filter from '../cardlist/Filter.js';
+import Filter from '../CardList/Filter.js';
 
 class CardListApp extends Component {
 
